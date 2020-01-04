@@ -1,10 +1,10 @@
 'use strict';
 
 // constants and selectors for use in document
-const fillContainer = document.getElementById("element--container");
-const buttonContainer = document.getElementById("button-container");
-const dataAttribute = fillContainer.getAttribute("data-number-of-elements");
-const numElements = parseInt(dataAttribute,10);
+var fillContainer = document.getElementById("element--container");
+var buttonContainer = document.getElementById("button-container");
+var dataAttribute = fillContainer.getAttribute("data-number-of-elements");
+var numElements = parseInt(dataAttribute,10);
 
 /**
  * Creates and fills new elements with argument passed through
@@ -13,7 +13,7 @@ const numElements = parseInt(dataAttribute,10);
 function createParagraphElements (data) {
   // loop to create paragraph elements
   for (let i = 0; i < numElements; i ++) {
-    let newParagraph = document.createElement("p");
+    var newParagraph = document.createElement("p");
     fillContainer.append(newParagraph);
     newParagraph.innerHTML = data;
   }
