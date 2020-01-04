@@ -3,7 +3,6 @@
 // constants and selectors for use in document
 const fillContainer = document.getElementById("element--container");
 const buttonContainer = document.getElementById("button-container");
-const paragraph = document.createElement("p");
 const dataAttribute = fillContainer.getAttribute("data-number-of-elements");
 const numElements = parseInt(dataAttribute,10);
 
@@ -28,7 +27,7 @@ function createElements(event) {
 
   // if the event target is a button
   if (event.target.tagName === "BUTTON") {
-    
+
     // while there are children elements delete them before adding the new ones
     while (fillContainer.firstChild) {
       fillContainer.removeChild(fillContainer.firstChild);
