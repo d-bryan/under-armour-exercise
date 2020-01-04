@@ -26,29 +26,30 @@ function createParagraphElements (data) {
  */
 function createElements(event) {
 
-  // if event target is hello
-  if (event.target.id === "hello") {
+  // if the event target is a button
+  if (event.target.tagName === "BUTTON") {
     
     // while there are children elements delete them before adding the new ones
     while (fillContainer.firstChild) {
       fillContainer.removeChild(fillContainer.firstChild);
     }
-    // create the paragraph elements
-    createParagraphElements(event.target.id);
 
-    // if event target is goodbye
-  } else if (event.target.id === "goodbye") {
+    // if event target is hello
+    if (event.target.id === "hello") {
 
-    // while there are children elements delete them before adding the new ones
-    while (fillContainer.firstChild) {
-      fillContainer.removeChild(fillContainer.firstChild);
+      // create the paragraph elements
+      createParagraphElements(event.target.id);
+
+      // if event target is goodbye
+    } else if (event.target.id === "goodbye") {
+
+      // create the paragraph elements
+      createParagraphElements(event.target.id);
+
+    } else {
+      // if both have failed log an error to the console with the event
+      console.error("There was an error with the event listener.", event);
     }
-    // create the paragraph elements
-    createParagraphElements(event.target.id);
-
-  } else {
-    // if both have failed log an error to the console with the event
-    console.error("There was an error with the event listener.", event);
   }
 
 }
